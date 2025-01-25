@@ -1,0 +1,28 @@
+/* src/components/Footer.css */
+
+.footer {
+    background-color: #0a3d65;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
+  
+  .footer .social-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer .social-links li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .footer .social-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  

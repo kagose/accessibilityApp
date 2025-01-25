@@ -1,0 +1,29 @@
+/* src/components/Header.css */
+
+.header {
+    background-color: #0a3d65;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header .logo img {
+    height: 50px;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .nav ul li {
+    margin-left: 20px;
+  }
+  
+  .nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  

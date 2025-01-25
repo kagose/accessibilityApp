@@ -1,0 +1,63 @@
+/* src/App.css */
+
+/* Main container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the app takes the full height of the screen */
+}
+
+/* Floating Widget Styles */
+.floating-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0a3d65;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  transform: translateY(0); /* Keep the widget at the bottom-right */
+  z-index: 1000;
+}
+
+/* If the widget is open (controls are visible) */
+.floating-widget.open {
+  transform: translateY(0);
+}
+
+/* If the widget is closed (controls are hidden) */
+.floating-widget.closed {
+  transform: translateY(100%); /* Moves the widget offscreen (downwards) */
+}
+
+.toggle-btn {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.widget-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.widget-content button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.widget-content button:hover {
+  background-color: #0056b3;
+}
