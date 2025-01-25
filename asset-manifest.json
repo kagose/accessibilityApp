@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/accessibilityapp/static/css/main.29037aa2.css",
+    "main.js": "/accessibilityapp/static/js/main.d01f6241.js",
+    "index.html": "/accessibilityapp/index.html",
+    "main.29037aa2.css.map": "/accessibilityapp/static/css/main.29037aa2.css.map",
+    "main.d01f6241.js.map": "/accessibilityapp/static/js/main.d01f6241.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29037aa2.css",
+    "static/js/main.d01f6241.js"
+  ]
+}

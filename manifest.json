@@ -1,0 +1,22 @@
+{
+  "short_name": "AccessibilityApp",
+  "name": "AccessibilityApp",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0a3d65",
+  "description": "A Progressive Web App for Voice Navigation"
+}
