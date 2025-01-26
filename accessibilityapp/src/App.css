@@ -1,10 +1,50 @@
-/* src/App.css */
+/* General Reset and Layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Main container */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures the app takes the full height of the screen */
+  flex-grow: 1; /* Ensures the content area takes available space */
+}
+
+.main-content {
+  flex-grow: 1; /* Makes sure the content area takes remaining space */
+}
+
+/* Color Blindness Mode Styles */
+body.color-blind-mode {
+  background-color: #746d6d; /* Lighter background color */
+  color: #000; /* Darker text for better contrast */
+}
+
+body.color-blind-mode h1,
+body.color-blind-mode h2,
+body.color-blind-mode h3,
+body.color-blind-mode ul {
+  color: #ff6600; /* A contrasting color for headers */
+}
+
+body.color-blind-mode a {
+  color: #007bff; /* Change link colors for better visibility */
+}
+
+body.color-blind-mode a,
+body.color-blind-mode li {
+  color: #ff6600 !important; /* Make links and list items red */
 }
 
 /* Floating Widget Styles */
@@ -18,7 +58,6 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-  transform: translateY(0); /* Keep the widget at the bottom-right */
   z-index: 1000;
 }
 
@@ -60,4 +99,155 @@
 
 .widget-content button:hover {
   background-color: #0056b3;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background for the overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Ensure it's above other content */
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%; /* Make the modal large */
+  max-width: 900px; /* Set a max width for larger screens */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #000;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  height: 80%; /* Set the modal height */
+}
+
+.modal-content h2 {
+  color: #0a3d65; /* Dark blue color for the modal header */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Question Input Field */
+.modal-content .question-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content .qa-container {
+  background-color: #939191;
+  border-radius: 4px;
+  padding: 0 4px 4px 4px;
+}
+
+.modal-content .qa-container p {
+  margin: 0 2px;
+}
+
+.modal-content .question-input:focus {
+  border-color: #007bff; /* Focus effect */
+  outline: none;
+}
+
+/* Button Styles (Modal Specific) */
+.modal-content button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.modal-content button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Modal Text and Answer Display */
+.modal-content .qa-container p {
+  color: #000;
+  font-size: 16px;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+/* Close Button */
+.modal-content .close-btn {
+  padding: 10px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.modal-content .close-btn:hover {
+  background-color: #cc5200;
+}
+
+/* TRA Assistant Modal Styles (Specific) */
+.modal-content iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* Loading Placeholder Styles */
+.loading-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+  color: #333;
+}
+
+.loading-placeholder .spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styling for Modal */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .floating-widget {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+  }
 }

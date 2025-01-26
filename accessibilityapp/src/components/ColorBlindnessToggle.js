@@ -7,7 +7,7 @@ const ColorBlindnessToggle = () => {
     document.body.classList.toggle('color-blind-mode');
   };
 
-  return <button onClick={toggleColorBlindnessMode}>Toggle Color Blind Mode</button>;
+  return <button onClick={toggleColorBlindnessMode}>ColorBlindMode</button>;
 };
 
 export default ColorBlindnessToggle;
