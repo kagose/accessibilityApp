@@ -26,17 +26,42 @@ const AccessibilityFeatures = () => {
 
   //Microphone
   
-  const startListening = () => {
-    setIsTranscribing(true);
-    SpeechRecognition.startListening({ continuous: true });
-  };
 
+  let mediaStream = null;  // Store the media stream to stop it later
+
+  // Start listening for transcription
+  const startListening = () => {
+    // Request microphone access
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then((stream) => {
+        // Store the media stream
+        mediaStream = stream;
+        
+        // Microphone access granted, now start speech recognition
+        setIsTranscribing(true);
+        SpeechRecognition.startListening({ continuous: true });
+      })
+      .catch((err) => {
+        // Handle error if microphone access is denied
+        console.error("Microphone access denied:", err);
+        alert("Microphone access is required to use speech recognition.");
+      });
+  };
+  
   // Stop listening for transcription
   const stopListening = () => {
+    // Stop speech recognition
     SpeechRecognition.stopListening();
     setIsTranscribing(false);
+  
+    // If we have a media stream, stop the tracks (to release the microphone)
+    if (mediaStream) {
+      mediaStream.getTracks().forEach(track => {
+        track.stop();  // Stop the track to release the microphone
+      });
+      mediaStream = null;  // Clear the media stream reference
+    }
   };
-
 
 
   // Increase font size

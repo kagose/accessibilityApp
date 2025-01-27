@@ -9,7 +9,7 @@ import FloatingWidget from './components/FloatingWidget';
 import Modal from './components/Modal'; // Import Modal for displaying AI answer
 
 // Import React Router components
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {Route, Routes } from 'react-router-dom';
 import About from './components/About'; // Import About page
 import Services from './components/Services'; // Import Services page
 import Contact from './components/Contact'; // Import Contact page
@@ -21,15 +21,17 @@ function App() {
   const closeModal = () => setIsModalOpen(false); 
 
   return (
-    <Router>
+  
       <div className="App">
         <Header />
         <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Content />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
+          <Routes >
+            <Route path='/'>
+              <Route  index element={<Content />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
           </Routes>
         </div>
         <Footer />
@@ -41,7 +43,6 @@ function App() {
           closeModal={closeModal}
         />
       </div>
-    </Router>
   );
 }
 
