@@ -3,12 +3,12 @@
   "name": "TRA_AccessibilityApp",
   "icons": [
     {
-      "src": "/accessibilityApp/public/logo192.png",
+      "src": "/accessibilityApp/logo192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/accessibilityApp/public/logo512.png",
+      "src": "/accessibilityApp/logo512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
