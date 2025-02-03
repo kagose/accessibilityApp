@@ -1,14 +1,14 @@
 {
-  "short_name": "AccessibilityApp",
-  "name": "AccessibilityApp",
+  "short_name": "TRA_AccessibilityApp",
+  "name": "TRA_AccessibilityApp",
   "icons": [
     {
-      "src": "/accessibilityApp/icons/icon-192x192.png",
+      "src": "/accessibilityApp/public/logo192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/accessibilityApp/icons/icon-512x512.png",
+      "src": "/accessibilityApp/public/logo512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
