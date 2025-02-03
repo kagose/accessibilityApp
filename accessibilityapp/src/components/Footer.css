@@ -1,7 +1,8 @@
 /* src/components/Footer.css */
 
 .footer {
-  background-color: #0a3d65;
+  background-color: var(--bgHF-color, #0a3d65);
+  transition: background-color 0.7s ease; /* Smooth transition */
   color: white;
   text-align: center;
   padding: 20px;

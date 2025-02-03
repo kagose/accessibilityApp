@@ -45,8 +45,8 @@ const FloatingWidget = () => {
             <AccessibilityFeatures />  {/* Accessibility controls with all features */}
 
             {/* AI Q&A and TRA Assistant Modals */}
-            <button onClick={openModal}>Ask AI</button>
-            <button onClick={openTRA}>TRA Assistant</button>
+            {/* <button onClick={openModal}>Ask AI</button> */}
+            <button onClick={openTRA}>TRA AI Assistant</button>
           </div>
         )}
       </div>

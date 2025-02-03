@@ -108,7 +108,7 @@ const AccessibilityFeatures = () => {
       if (lastWord.includes("about")) {
         navigate('/about');  // Navigate to About page
         setVoiceNavTranscript(""); // Clear the voice command after navigating
-      } else if (lastWord.includes("services")) {
+      } else if (lastWord.includes("service")) {
         navigate('/services');  // Navigate to Services page
         setVoiceNavTranscript(""); // Clear the voice command after navigating
       } else if (lastWord.includes("home") || lastWord.includes("start")) {
@@ -187,11 +187,15 @@ const AccessibilityFeatures = () => {
     }
   }, [transcript, isTranscribing]);
 
+
   // Apply high contrast and font size effects
   useEffect(() => {
     document.body.style.fontSize = `${fontSize}px`;
     document.body.style.backgroundColor = isHighContrast ? 'black' : 'white';
     document.body.style.color = isHighContrast ? 'white' : 'black';
+    document.documentElement.style.setProperty("--bg-color", isHighContrast ? "black" : "white");
+    document.documentElement.style.setProperty("--text-color", isHighContrast ? "white" : "black");
+    document.documentElement.style.setProperty("--bgHF-color", isHighContrast ? "black" : "#0a3d65");
   }, [fontSize, isHighContrast]);
 
   return (

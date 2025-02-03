@@ -1,13 +1,16 @@
 /* src/components/Header.css */
 
-.header {
-    background-color: #0a3d65;
+
+
+  .header {
+    background-color: var(--bgHF-color, #0a3d65); /* Use --bgHF-color if set, otherwise fallback to #0a3d65 */
     color: white;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+    transition: background-color 0.7s ease; /* Smooth transition */
+}
   
   .header .logo img {
     height: 50px;
